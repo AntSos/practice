@@ -37,5 +37,6 @@ def main():
         print('VALID!')
     else:
         print('INVALID!')
+if __name__ == "__main__":
 
-main()
+    main()
