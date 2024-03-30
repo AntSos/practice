@@ -19,7 +19,7 @@ s1_intersection_s3 = s1.intersection (s2)
 s1_difference_s2 = s1-s2
 s1_difference_s3 = s1.difference (s2)
 
-# Subset usethe method issubset ()
+# Subset use the method issubset ()
 s1_subset_s2 = s1.issubset (s2)
 
 # For simetric use the the ^ operator or symmetric_difference() method or
@@ -29,6 +29,7 @@ s2_symmetric_difference_s1 = s1.symmetric_difference(s2)
 #To add elemnts to a set use the method add ()
 s2.add (24)
 print (s2)
+
 #To remove use temethod remove () or discard ()
 s2.remove (24)
 print (s2)
