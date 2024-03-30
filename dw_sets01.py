@@ -49,7 +49,7 @@ def short_long_name (input_set):
     longest_names = [name for name in input_set if len(name) == len(max(input_set, key=len))]
 
     # Display the results
-    print(f"Shortest Name: {', '.join (sorted (shortest_name, reverse = False))}")
+    print(f"Shortest Names: {', '.join (sorted (shortest_name, reverse = False))}")
     print(f"Longest Names: {', '.join(sorted (longest_names, reverse = False))}")
 
 
