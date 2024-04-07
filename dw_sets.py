@@ -26,15 +26,15 @@ s1_subset_s2 = s1.issubset (s2)
 s2_symmetric_difference_s1 = s1 ^ s2
 s2_symmetric_difference_s1 = s1.symmetric_difference(s2)
 
-#To add elemnts to a set use the method add ()
+#To add elements to a set use the method add ()
 s2.add (24)
 print (s2)
 
-#To remove use temethod remove () or discard ()
+#To remove use the method remove () or discard ()
 s2.remove (24)
 print (s2)
 
-# Add severallemns in a set at once use operators |= or method update([])
+# Add severall itemns in a set at once use operators |= or method update([])
 s3 |= {21,35,36}
 print (s3) 
 
