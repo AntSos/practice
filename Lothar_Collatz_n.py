@@ -4,7 +4,7 @@ def l_c_steps (number):
     count = 0
     while number != 1:
         if number % 2 == 0:
-            number = number // 2
+            number //= 2 # Sameas number = number // 2
         else:
             number = (number * 3) + 1
 
