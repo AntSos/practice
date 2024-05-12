@@ -204,6 +204,7 @@ player_stats = {'LeBron James': {'rating': 97, 'jersey': '#23', 'team': 'Los Ang
 
 player_salaries = {'LeBron James': '$37436858', 'Kawhi Leonard': '$32742000', 'Giannis Antetokounmpo': '$25842697', 'Kevin Durant': '$37199000', 'James Harden': '$38199000'}
 
+fruits_data = [('apple', 'red', 0.99), ('banana', 'yellow', 0.59), ('orange', 'orange', 0.79), ('grape', 'purple', 1.29), ('kiwi', 'green', 1.09), ('pineapple', 'yellow', 1.99), ('strawberry', 'red', 0.69), ('watermelon', 'green', 2.49), ('mango', 'orange', 1.49), ('peach', 'orange', 1.79), ('pear', 'green', 0.89), ('plum', 'purple', 0.79), ('raspberry', 'red', 2.99), ('blueberry', 'blue', 3.99), ('blackberry', 'black', 4.99)]
 
 #Access the values using key
 lebron_height = players_data['LeBron James']['height']
@@ -250,15 +251,76 @@ players_data = players_data ['LeBron James']. update ({'rating': 95, 'salary': '
 
 # Create a new specific dictionary
 players_data_usa = {}
-for player in players_data:
-    if players_data[player]['country'] == 'USA':
-        players_data_usa[player] = [players_data[player]['rating'], players_data[player]['team']]
+#for player in players_data:
+ #   if players_data[player]['country'] == 'USA':
+  #      players_data_usa[player] = [players_data[player]['rating'], players_data[player]['team']]
 
 #Create a new dictionary with counts
 teams = {}
-for player in players_data:
-    if players_data[player]['team'] in teams:
-        teams[players_data[player]['team']] += 1
-    else:
-        teams[players_data[player]['team']] = 1
-print (teams)
+#for player in players_data:
+ #   if players_data[player]['team'] in teams:
+  #      teams[players_data[player]['team']] += 1
+   # else:
+    #    teams[players_data[player]['team']] = 1
+#print (teams)
+
+#Create a dictionary from a list of tuples
+fruits = {}
+for fruit in fruits_data:
+    #Name is the position 0 in each tuple
+    name = fruit [0]
+    #Color is the position 1 in each tuple
+    color = fruit [1]
+    #Price is the position 2 in each tuple
+    price = fruit [2]
+    # Add to the dic fruits the variable name follow by a dictionary with color and price
+    fruits[name] = {'color':color, 'price':price}
+
+# Add new values 
+fruits ['cherry'] = {'color':'red', 'price': 1.99}
+fruits ['lemon'] = {'color':'yellow', 'price': 0.79}
+fruits ['lime'] = {'color':'green', 'price': 0.69}
+
+print (fruits)
+
+#Know the len of an item in the values
+colors = set ()
+for i in fruits.values ():
+    # Add the i color value to the set ()
+    colors.add(i['color'])
+
+print (len (colors))
+
+# Get the averange price
+total = 0
+
+for fruit in fruits:
+    total += fruits[fruit]['price']
+
+print (total / len(fruits))
+
+# Create a function that return a dictionary with the fruits with certain price range
+def find_expensive_fruits(input_dic, price):
+    price_f = {}
+    #Searching the element and values
+    for e, v in input_dic.items ():
+        # if value prices is > than input price add it to the dic
+        if v['price'] > price:
+            price_f[e] = v['price']
+    #Return the dic
+    return price_f
+
+# Update the price of a fruit
+def update_fruit_price(input_dic, fruit_name, new_price):
+    input_dic[fruit_name]['price'] = new_price
+
+    return input_dic
+
+def main ():
+    print ("*"*105)
+    print(find_expensive_fruits(fruits, 1.5))
+    print ("*"*105)
+    print (update_fruit_price(fruits, 'apple', 1.99))
+
+if __name__=="__main__":
+    main ()
